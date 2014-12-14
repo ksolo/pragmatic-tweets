@@ -31,7 +31,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="handleTweetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="leB-c1-O0U"/>
+                                    <action selector="handleShowMyTweetsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="maJ-XJ-KgK"/>
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xzk-VH-F1Z">
@@ -51,6 +51,9 @@
                             <constraint firstItem="tzJ-jm-zgB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sLz-KM-wbm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="twitterWebView" destination="Xzk-VH-F1Z" id="ykF-pY-pqp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
