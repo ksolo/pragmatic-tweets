@@ -10,7 +10,9 @@ import UIKit
 import XCTest
 import PragmaticTweets
 
-class WebViewTests: XCTestCase {
+class WebViewTests: XCTestCase, UIWebViewDelegate {
+    
+    var loadedWebViewExpectation : XCTestExpectation?
 
     override func setUp() {
         super.setUp()
@@ -36,12 +38,27 @@ class WebViewTests: XCTestCase {
     
     func testAutomaticWebLoad() {
         if let viewController = UIApplication.sharedApplication().windows[0].rootViewController as? ViewController {
-            let webViewContents = viewController.twitterWebView.stringByEvaluatingJavaScriptFromString("document.documentElement.textContent")
-            XCTAssertNotNil(webViewContents, "web view contents are nil")
-            XCTAssertNotEqual(webViewContents!, "", "web view contents are empty")
+            viewController.twitterWebView.delegate = self
+            self.loadedWebViewExpectation = expectationWithDescription("web view auto-load test")
+            waitForExpectationsWithTimeout(5.0, handler: nil)
         }
         else {
             XCTFail("couldn't get root view controller")
+        }
+    }
+    
+    // prama mark UIWebViewDelegate Methods
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        XCTFail("web view load failed")
+        self.loadedWebViewExpectation!.fulfill()
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        if let webViewContents = webView.stringByEvaluatingJavaScriptFromString("document.documentElement.textContent") {
+            if webViewContents != "" {
+                self.loadedWebViewExpectation!.fulfill()
+            }
         }
     }
 
