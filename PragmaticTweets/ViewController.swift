@@ -9,14 +9,11 @@
 import UIKit
 import Social
 
-public class ViewController: UIViewController {
-
-    @IBOutlet public weak var twitterWebView: UIWebView!
+public class ViewController: UITableViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.reloadTweets()
     }
 
     override public func didReceiveMemoryWarning() {
@@ -38,15 +35,29 @@ public class ViewController: UIViewController {
         }
     }
     
-    @IBAction func handleShowMyTweetsTapped(sender: UIButton) {
-        self.reloadTweets()
+    func reloadTweets() {
+        
     }
     
-    func reloadTweets(){
-        let url = NSURL(string: "http://www.twitter.com/kmsolorio")
-        let urlRequest = NSURLRequest(URL: url!)
-        self.twitterWebView.loadRequest(urlRequest)
+    // pragma mark Datasource Compliance
+    
+    public override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 5
     }
+    
+    public override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Section \(section)"
+    }
+    
+    public override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section + 1
+    }
+    
+    public override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
+        return cell
+    }
+
     
 }
 
