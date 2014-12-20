@@ -9,7 +9,15 @@
 import UIKit
 import Social
 
+let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profile_images/default_profile_6_200x200.png")
+
 public class ViewController: UITableViewController {
+    
+    var parsedTweets = [
+        ParsedTweet(tweetText: "iOS 8 SDK now in print!", userName: "@pragprog", createdAt: "2014-08-20 16:44:30 EDT", userAvatarURL: defaultAvatarURL),
+        ParsedTweet(tweetText: "Whoooo!", userName: "@kmsolorio", createdAt: "2014-08-21 15:33:15 EDT", userAvatarURL: defaultAvatarURL),
+        ParsedTweet(tweetText: "Work please", userName: "@lyly5545", createdAt: "2014-08-22 12:11:10 EDT", userAvatarURL: defaultAvatarURL)
+    ]
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -42,19 +50,18 @@ public class ViewController: UITableViewController {
     // pragma mark Datasource Compliance
     
     public override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 5
-    }
-    
-    public override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section)"
+        return 1
     }
     
     public override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section + 1
+        return parsedTweets.count
     }
     
     public override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
+        let parsedTweet = parsedTweets[indexPath.row]
+        
+        cell.textLabel?.text = parsedTweet.tweetText
         return cell
     }
 
