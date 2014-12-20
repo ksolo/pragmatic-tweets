@@ -14,6 +14,7 @@
 		1528B0EC1A12D00800FBC18A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1528B0EB1A12D00800FBC18A /* Images.xcassets */; };
 		1528B0EF1A12D00800FBC18A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1528B0ED1A12D00800FBC18A /* LaunchScreen.xib */; };
 		1528B0FB1A12D00800FBC18A /* PragmaticTweetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1528B0FA1A12D00800FBC18A /* PragmaticTweetsTests.swift */; };
+		15FEAE7A1A44723A00CFC4C2 /* ParsedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAE791A44723A00CFC4C2 /* ParsedTweet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		1528B0F41A12D00800FBC18A /* PragmaticTweetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PragmaticTweetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1528B0F91A12D00800FBC18A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1528B0FA1A12D00800FBC18A /* PragmaticTweetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PragmaticTweetsTests.swift; sourceTree = "<group>"; };
+		15FEAE791A44723A00CFC4C2 /* ParsedTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParsedTweet.swift; path = ../ParsedTweet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		1528B0E11A12D00800FBC18A /* PragmaticTweets */ = {
 			isa = PBXGroup;
 			children = (
+				15FEAE791A44723A00CFC4C2 /* ParsedTweet.swift */,
 				1528B0E41A12D00800FBC18A /* AppDelegate.swift */,
 				1528B0E61A12D00800FBC18A /* ViewController.swift */,
 				1528B0E81A12D00800FBC18A /* Main.storyboard */,
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FEAE7A1A44723A00CFC4C2 /* ParsedTweet.swift in Sources */,
 				1528B0E71A12D00800FBC18A /* ViewController.swift in Sources */,
 				1528B0E51A12D00800FBC18A /* AppDelegate.swift in Sources */,
 			);
