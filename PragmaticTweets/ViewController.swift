@@ -22,6 +22,12 @@ public class ViewController: UITableViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        reloadTweets()
+        
+        let refresher = UIRefreshControl()
+        refresher.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        self.refreshControl = refresher
     }
 
     override public func didReceiveMemoryWarning() {
@@ -43,8 +49,19 @@ public class ViewController: UITableViewController {
         }
     }
     
+    @IBAction func handleRefresh(sender: AnyObject?) {
+        self.parsedTweets.append(
+            ParsedTweet(
+                tweetText: "New Row",
+                userName: "@refresh",
+                createdAt: NSDate().description,
+                userAvatarURL: defaultAvatarURL))
+        self.reloadTweets()
+        self.refreshControl!.endRefreshing()
+    }
+    
     func reloadTweets() {
-        
+        self.tableView.reloadData()
     }
     
     // pragma mark Datasource Compliance
@@ -58,10 +75,17 @@ public class ViewController: UITableViewController {
     }
     
     public override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCellWithIdentifier("CustomTweetCell") as ParsedTweetCell
         let parsedTweet = parsedTweets[indexPath.row]
         
-        cell.textLabel?.text = parsedTweet.tweetText
+        cell.userNameLabel.text = parsedTweet.userName
+        cell.tweetTextLabel.text = parsedTweet.tweetText
+        cell.createdAtLabel.text = parsedTweet.createdAt
+        
+        if let avatarURL = parsedTweet.userAvatarURL {
+            cell.avatarImageView.image = UIImage(data: NSData(contentsOfURL: avatarURL)!)
+        }
+        
         return cell
     }
 
