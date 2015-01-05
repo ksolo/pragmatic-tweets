@@ -72,7 +72,7 @@
                                         <constraint firstItem="Evr-rD-3oh" firstAttribute="top" secondItem="nJX-gx-gCA" secondAttribute="topMargin" id="JAa-xq-p8N"/>
                                         <constraint firstItem="OnW-Mg-AEN" firstAttribute="top" secondItem="Evr-rD-3oh" secondAttribute="bottom" constant="8" id="LHp-ZA-LHC"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Pq0-xm-HBM" secondAttribute="bottom" id="PdG-O6-cTL"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Evr-rD-3oh" secondAttribute="trailing" constant="392" id="QaT-I9-d9X"/>
+                                        <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="Evr-rD-3oh" secondAttribute="trailing" constant="214" id="QaT-I9-d9X"/>
                                         <constraint firstItem="Evr-rD-3oh" firstAttribute="leading" secondItem="46L-bf-oCU" secondAttribute="trailing" constant="8" id="dQ6-Kd-xio"/>
                                         <constraint firstItem="46L-bf-oCU" firstAttribute="leading" secondItem="nJX-gx-gCA" secondAttribute="leadingMargin" id="h3A-pD-Uxg"/>
                                         <constraint firstAttribute="centerX" secondItem="Pq0-xm-HBM" secondAttribute="centerX" id="jky-D3-yJR"/>
