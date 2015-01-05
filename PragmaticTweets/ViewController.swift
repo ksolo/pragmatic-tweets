@@ -142,6 +142,23 @@ public class ViewController: UITableViewController {
         cell.createdAtLabel.text = parsedTweet.createdAt
         
         if let avatarURL = parsedTweet.userAvatarURL {
+            cell.avatarImageView.image = nil
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+            { () -> Void in
+                if let imageData = NSData(contentsOfURL: avatarURL) {
+                    let avatarImage = UIImage(data: imageData)
+                
+                    dispatch_async(dispatch_get_main_queue(),
+                    {
+                        if cell.userNameLabel.text == parsedTweet.userName {
+                            cell.avatarImageView.image = avatarImage
+                        }
+                        else {
+                            println("Oops, wrong cell, never mind")
+                        }
+                    })
+                }
+            })
             cell.avatarImageView.image = UIImage(data: NSData(contentsOfURL: avatarURL)!)
         }
         
