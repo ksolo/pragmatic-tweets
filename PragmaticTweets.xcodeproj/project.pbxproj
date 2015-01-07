@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		150B774E1A3F3BF70012AAB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 150B77501A3F3BF70012AAB4 /* Localizable.strings */; };
 		1528B0E51A12D00800FBC18A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1528B0E41A12D00800FBC18A /* AppDelegate.swift */; };
-		1528B0E71A12D00800FBC18A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1528B0E61A12D00800FBC18A /* ViewController.swift */; };
+		1528B0E71A12D00800FBC18A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1528B0E61A12D00800FBC18A /* RootViewController.swift */; };
 		1528B0EA1A12D00800FBC18A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1528B0E81A12D00800FBC18A /* Main.storyboard */; };
 		1528B0EC1A12D00800FBC18A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1528B0EB1A12D00800FBC18A /* Images.xcassets */; };
 		1528B0EF1A12D00800FBC18A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1528B0ED1A12D00800FBC18A /* LaunchScreen.xib */; };
@@ -36,7 +36,7 @@
 		1528B0DF1A12D00800FBC18A /* PragmaticTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PragmaticTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1528B0E31A12D00800FBC18A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1528B0E41A12D00800FBC18A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1528B0E61A12D00800FBC18A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1528B0E61A12D00800FBC18A /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		1528B0E91A12D00800FBC18A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1528B0EB1A12D00800FBC18A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1528B0EE1A12D00800FBC18A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -86,10 +86,9 @@
 		1528B0E11A12D00800FBC18A /* PragmaticTweets */ = {
 			isa = PBXGroup;
 			children = (
-				15C808031A53411400186658 /* ParsedTweet.swift */,
-				15C808051A53416500186658 /* ParsedTweetCell.swift */,
 				1528B0E41A12D00800FBC18A /* AppDelegate.swift */,
-				1528B0E61A12D00800FBC18A /* ViewController.swift */,
+				1564F9111A5D8B1E00946B3D /* Root VC */,
+				1564F9121A5D8B6B00946B3D /* Twitter Classes */,
 				1528B0E81A12D00800FBC18A /* Main.storyboard */,
 				1528B0EB1A12D00800FBC18A /* Images.xcassets */,
 				1528B0ED1A12D00800FBC18A /* LaunchScreen.xib */,
@@ -122,6 +121,23 @@
 				1528B0F91A12D00800FBC18A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1564F9111A5D8B1E00946B3D /* Root VC */ = {
+			isa = PBXGroup;
+			children = (
+				15C808051A53416500186658 /* ParsedTweetCell.swift */,
+				1528B0E61A12D00800FBC18A /* RootViewController.swift */,
+			);
+			name = "Root VC";
+			sourceTree = "<group>";
+		};
+		1564F9121A5D8B6B00946B3D /* Twitter Classes */ = {
+			isa = PBXGroup;
+			children = (
+				15C808031A53411400186658 /* ParsedTweet.swift */,
+			);
+			name = "Twitter Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +244,7 @@
 			files = (
 				15C808061A53416500186658 /* ParsedTweetCell.swift in Sources */,
 				15C808041A53411400186658 /* ParsedTweet.swift in Sources */,
-				1528B0E71A12D00800FBC18A /* ViewController.swift in Sources */,
+				1528B0E71A12D00800FBC18A /* RootViewController.swift in Sources */,
 				1528B0E51A12D00800FBC18A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
