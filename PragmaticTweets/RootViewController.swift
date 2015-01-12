@@ -76,6 +76,7 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
                     parsedTweet.tweetText = tweetDict["text"] as? NSString
                     parsedTweet.createdAt = tweetDict["created_at"] as? NSString
                     parsedTweet.userName = userDict["name"] as NSString
+                    parsedTweet.tweetIdString = tweetDict["id_str"] as? NSString
                     parsedTweet.userAvatarURL = NSURL(string: userDict["profile_image_url"] as NSString!)
                     
                     self.parsedTweets.append(parsedTweet)
@@ -90,6 +91,17 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         }
         else {
             return
+        }
+    }
+    
+    // pragma mark segue
+    public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showTweetDetailSegue" {
+            if let tweetDetailVC = segue.destinationViewController as? TweetDetailViewController {
+                let row = self.tableView!.indexPathForSelectedRow()!.row
+                let parsedTweet = parsedTweets[row] as ParsedTweet
+                tweetDetailVC.tweetIdString = parsedTweet.tweetIdString
+            }
         }
     }
     

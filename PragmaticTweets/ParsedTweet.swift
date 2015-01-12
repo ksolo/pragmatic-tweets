@@ -13,6 +13,7 @@ class ParsedTweet: NSObject {
     var tweetText : String?
     var userName : String?
     var createdAt : String?
+    var tweetIdString : String?
     var userAvatarURL : NSURL?
     
     init(tweetText: String?, userName: String?, createdAt: String?, userAvatarURL: NSURL?){
