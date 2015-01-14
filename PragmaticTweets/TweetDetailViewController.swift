@@ -49,6 +49,18 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
         twitterRequest.sendTwitterRequest(twitterAPIURL, params: twitterParams, delegate: self)
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "showUserDetailsSegue") {
+            if let userDetailVC = segue.destinationViewController as? UserDetailViewController {
+                userDetailVC.screenName = self.userScreenNameLabel.text
+            }
+        }
+    }
+    
+    @IBAction func unwindToTweetDetailVC(segue: UIStoryboardSegue?) {
+        
+    }
+    
     // pragma mark TwitterAPIRequestDelegate
     func handleTwitterData(data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!, fromRequest: TwitterAPIRequest!) {
         if let dataValue = data {
