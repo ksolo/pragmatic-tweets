@@ -146,6 +146,20 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         
         return cell
     }
+    
+    public override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let parsedTweet = parsedTweets[indexPath.row]
+        if self.splitViewController != nil {
+            if (self.splitViewController!.viewControllers.count > 1) {
+                if let tweetDetailNav =  self.splitViewController!.viewControllers[1] as? UINavigationController {
+                    if let tweetDetailVC = tweetDetailNav.viewControllers[0] as? TweetDetailViewController {
+                        tweetDetailVC.tweetIdString = parsedTweet.tweetIdString
+                    }
+                }
+            }
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
 
     
 }
