@@ -123,7 +123,7 @@
         <!--Tweet-->
         <scene sceneID="rMJ-n6-4w6">
             <objects>
-                <viewController id="7Tc-3j-Ouj" customClass="TweetDetailViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TweetDetailVC" id="7Tc-3j-Ouj" customClass="TweetDetailViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MSl-bW-YgZ"/>
                         <viewControllerLayoutGuide type="bottom" id="mqF-MK-cxp"/>
@@ -283,7 +283,6 @@
         <!--Navigation Controller-->
         <scene sceneID="uMB-68-1Kq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="egq-TR-xvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="swy-ZQ-np5" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OTt-5l-sUS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -293,6 +292,7 @@
                         <segue destination="2ri-kl-0jG" kind="relationship" relationship="rootViewController" id="Xpj-b1-Ga6"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="egq-TR-xvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-598.5" y="36"/>
         </scene>
