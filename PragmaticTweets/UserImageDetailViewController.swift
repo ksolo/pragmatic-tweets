@@ -9,6 +9,10 @@
 import UIKit
 
 class UserImageDetailViewController: UIViewController {
+    
+    @IBOutlet weak var userImageView: UIImageView!
+    
+    var userImageURL : NSURL?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +25,13 @@ class UserImageDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if userImageURL != nil {
+            if let imageData = NSData(contentsOfURL: userImageURL!) {
+                userImageView.image = UIImage(data: imageData)
+            }
+        }
     }
-    */
 
 }

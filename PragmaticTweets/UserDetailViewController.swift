@@ -17,6 +17,7 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
     @IBOutlet weak var userDescriptionLabel: UILabel!
     
     var screenName : String?
+    var userImageURL : NSURL?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,9 +60,10 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
                         self.userScreenNameLabel.text = tweetDict["screen_name"] as? NSString
                         self.userLocationLabel.text = tweetDict["location"] as? NSString
                         self.userDescriptionLabel.text = tweetDict["description"] as? NSString
+                        self.userImageURL = NSURL(string: tweetDict["profile_image_url"] as NSString!)
                         
-                        if let userImageURL = NSURL(string: tweetDict["profile_image_url"] as NSString) {
-                            if let userImageData = NSData(contentsOfURL: userImageURL) {
+                        if self.userImageURL != nil {
+                            if let userImageData = NSData(contentsOfURL: self.userImageURL!) {
                                 self.userImageView.image = UIImage(data:userImageData)
                             }
                         }
@@ -71,8 +73,17 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
         }
     }
     
-    // Segue unwinding
+    // Segue Methods
     @IBAction func unwindToUserDetailVC(segue: UIStoryboardSegue) {
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showUserImageDetailSegue" {
+            if let imageDetailVC = segue.destinationViewController as? UserImageDetailViewController {
+                var urlString = userImageURL!.absoluteString?.stringByReplacingOccurrencesOfString("_normal", withString: "", options: nil, range: nil)
+                imageDetailVC.userImageURL = NSURL(string: urlString!)
+            }
+        }
     }
 
 }
