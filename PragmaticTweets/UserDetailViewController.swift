@@ -70,5 +70,9 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
             }
         }
     }
+    
+    // Segue unwinding
+    @IBAction func unwindToUserDetailVC(segue: UIStoryboardSegue) {
+    }
 
 }

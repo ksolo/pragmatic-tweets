@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1iU-ru-JJ4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1iU-ru-JJ4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -337,8 +337,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zfq-D8-TRd">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zfq-D8-TRd">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Eko-Cq-d33"/>
                                     <constraint firstAttribute="width" constant="100" id="fX2-uI-5hf"/>
@@ -355,6 +356,9 @@
                                         <include reference="fX2-uI-5hf"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JVD-B4-tdd" appends="YES" id="Kqp-Ga-mPa"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUi-fE-yUp">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -491,8 +495,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bg-q4-NLv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="RhD-dL-Zgd" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="JVD-B4-tdd">
+                    <connections>
+                        <segue destination="9me-ld-OmB" kind="presentation" id="72y-dB-yoE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="981" y="829"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1yd-sU-ElG">
+            <objects>
+                <viewController id="9me-ld-OmB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xay-Z3-RWL"/>
+                        <viewControllerLayoutGuide type="bottom" id="btu-wn-TCQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="96U-VV-oxq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7o-DO-CiJ">
+                                <rect key="frame" x="175" y="175" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="9j1-AD-Mz9"/>
+                                    <constraint firstAttribute="width" constant="250" id="J9q-bq-9pv"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iv3-Oq-Y2H">
+                                <rect key="frame" x="277" y="542" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="yXy-Ll-0cJ" kind="unwind" unwindAction="unwindToUserDetailVC:" id="acc-ws-Vp8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="iv3-Oq-Y2H" secondAttribute="centerX" id="5WX-IT-dMr"/>
+                            <constraint firstAttribute="centerX" secondItem="D7o-DO-CiJ" secondAttribute="centerX" id="JY6-7g-GMO"/>
+                            <constraint firstItem="btu-wn-TCQ" firstAttribute="top" secondItem="iv3-Oq-Y2H" secondAttribute="bottom" constant="28" id="c1U-wJ-Qbm"/>
+                            <constraint firstAttribute="centerY" secondItem="D7o-DO-CiJ" secondAttribute="centerY" id="d3j-qC-eEc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SIn-D1-UU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yXy-Ll-0cJ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1763" y="829"/>
         </scene>
     </scenes>
 </document>
