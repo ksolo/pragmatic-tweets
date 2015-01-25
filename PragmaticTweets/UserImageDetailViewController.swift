@@ -11,6 +11,7 @@ import UIKit
 class UserImageDetailViewController: UIViewController {
     
     @IBOutlet weak var userImageView: UIImageView!
+    var preGestureTransform : CGAffineTransform?
     
     var userImageURL : NSURL?
 
@@ -34,4 +35,30 @@ class UserImageDetailViewController: UIViewController {
         }
     }
 
+    @IBAction func handlePanGesture(sender: UIPanGestureRecognizer) {
+        if sender.state == .Began {
+            preGestureTransform = userImageView.transform
+        }
+        
+        if sender.state == .Began || sender.state == .Changed {
+            let translation = sender.translationInView(self.userImageView)
+            let translatedTransform = CGAffineTransformTranslate(preGestureTransform!, translation.x, translation.y)
+            userImageView.transform = translatedTransform
+        }
+    }
+    
+    @IBAction func handleDoubleTapGesture(sender: UITapGestureRecognizer) {
+        userImageView.transform = CGAffineTransformIdentity
+    }
+    
+    @IBAction func handlePinchGesture(sender: UIPinchGestureRecognizer) {
+        if sender.state == .Began {
+            preGestureTransform = userImageView.transform
+        }
+        
+        if sender.state == .Began || sender.state == .Changed {
+            let scaledTransform = CGAffineTransformScale(preGestureTransform!, sender.scale, sender.scale)
+            userImageView.transform = scaledTransform
+        }
+    }
 }
