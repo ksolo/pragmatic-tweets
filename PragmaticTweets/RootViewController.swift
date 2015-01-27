@@ -9,6 +9,7 @@
 import UIKit
 import Social
 import Accounts
+import Photos
 
 let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profile_images/default_profile_6_200x200.png")
 
@@ -97,6 +98,28 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
             return
         }
     }
+    
+    @IBAction func handlePhotoButtonTapped(sender: UIBarButtonItem) {
+        var fetchOptions = PHFetchOptions()
+        PHPhotoLibrary.requestAuthorization {
+            (authorized: PHAuthorizationStatus) -> Void in
+            if authorized == .Authorized {
+                fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+                let fetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
+                if let firstPhoto = fetchResult.firstObject as? PHAsset {
+                    self.createTweetForAsset(firstPhoto)
+                }
+            }
+        }
+    }
+    
+    func createTweetForAsset(asset: PHAsset) {
+        var requestOptions = PHImageRequestOptions()
+        requestOptions.synchronous = true
+        
+        // still need to do this
+    }
+    
     
     // pragma mark segue
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

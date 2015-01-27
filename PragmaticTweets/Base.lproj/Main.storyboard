@@ -109,6 +109,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tweets" id="dvl-5k-3pu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="T0e-C2-v5Z">
+                            <connections>
+                                <action selector="handlePhotoButtonTapped:" destination="2ri-kl-0jG" id="Veg-pf-dvI"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JPn-24-AUn">
                             <connections>
                                 <action selector="handleTweetButtonTapped:" destination="2ri-kl-0jG" id="AnE-Xm-2oH"/>
