@@ -10,6 +10,7 @@ import UIKit
 import Social
 import Accounts
 import Photos
+import CoreImage
 
 let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profile_images/default_profile_6_200x200.png")
 
@@ -117,7 +118,29 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         var requestOptions = PHImageRequestOptions()
         requestOptions.synchronous = true
         
-        // still need to do this
+        PHImageManager.defaultManager().requestImageForAsset(asset,
+            targetSize: CGSizeMake(640, 480),
+            contentMode: PHImageContentMode.AspectFit,
+            options: requestOptions) {
+                (image:UIImage!, info:[NSObject:AnyObject]!) -> Void in
+                var ciImage = CIImage(image: image)
+                ciImage = ciImage.imageByApplyingFilter("CIPixellate", withInputParameters: ["inputScale":15])
+                
+                let ciContext = CIContext(options: nil)
+                let cgImage = ciContext.createCGImage(ciImage, fromRect: ciImage.extent())
+                let tweetImage = UIImage(CGImage: cgImage)
+                
+                let tweetVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                let message = NSLocalizedString("Here's a photo I tweeted #pragios8", comment: "")
+                
+                tweetVC.setInitialText(message)
+                tweetVC.addImage(tweetImage)
+                
+                dispatch_async(dispatch_get_main_queue(),
+                {
+                    self.presentViewController(tweetVC, animated: true, completion: nil)
+                })
+            }
     }
     
     
