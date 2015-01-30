@@ -654,7 +654,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XMk-fZ-Scm" kind="unwind" unwindAction="unwindToTweetDetailVC:" id="EYQ-wW-xza"/>
+                                    <segue destination="XMk-fZ-Scm" kind="unwind" unwindAction="unwindToSizeClassOverridingVC:" id="wXy-oU-2pi"/>
                                 </connections>
                             </button>
                         </subviews>

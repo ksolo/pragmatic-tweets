@@ -48,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let components = query.componentsSeparatedByString("=")
                 if (components.count > 1 && components[0] == "screenname") {
                     if let sizeClassVC = self.window?.rootViewController as? SizeClassOverrideViewController {
+                        sizeClassVC.screenNameForOpenURL = components[1]
                         sizeClassVC.performSegueWithIdentifier("ShowUserFromURLSegue", sender: self)
                         showUserDetail = true
                     }

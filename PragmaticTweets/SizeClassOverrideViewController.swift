@@ -11,6 +11,7 @@ import UIKit
 class SizeClassOverrideViewController: UIViewController {
     
     var embeddedSplitVC : UISplitViewController?
+    var screenNameForOpenURL : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,16 @@ class SizeClassOverrideViewController: UIViewController {
         if segue.identifier == "embedSplitViewSegue" {
             self.embeddedSplitVC = segue.destinationViewController as? UISplitViewController
         }
+        else if segue.identifier == "ShowUserFromURLSegue" {
+            if let userDetailVC = segue.destinationViewController as? UserDetailViewController {
+                userDetailVC.screenName = self.screenNameForOpenURL
+            }
+        }
+    }
+    
+    // unwind segue
+    @IBAction func unwindToSizeClassOverridingVC(segue: UIStoryboardSegue) {
+        
     }
 
 }
