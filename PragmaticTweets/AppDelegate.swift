@@ -40,6 +40,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        var showUserDetail = false
+        if (url.path? == "/user") {
+            if let query = url.query {
+                let components = query.componentsSeparatedByString("=")
+                if (components.count > 1 && components[0] == "screenname") {
+                    if let sizeClassVC = self.window?.rootViewController as? SizeClassOverrideViewController {
+                        sizeClassVC.performSegueWithIdentifier("ShowUserFromURLSegue", sender: self)
+                        showUserDetail = true
+                    }
+                }
+            }
+        }
+        return showUserDetail
+    }
 
 
 }
