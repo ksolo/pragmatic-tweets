@@ -18,6 +18,8 @@
 		155E02531A7401F80025EE2F /* UserImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E02521A7401F80025EE2F /* UserImageDetailViewController.swift */; };
 		1564F9141A5D8C8500946B3D /* TwitterAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1564F9131A5D8C8500946B3D /* TwitterAPIRequest.swift */; };
 		1564F9161A5D8DB600946B3D /* TwitterAPIRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1564F9151A5D8DB600946B3D /* TwitterAPIRequestDelegate.swift */; };
+		157CD9EC1A829C960096962B /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157CD9EB1A829C960096962B /* KeyboardViewController.swift */; };
+		157CD9EF1A829C960096962B /* PragmaticTweepsKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 157CD9E71A829C960096962B /* PragmaticTweepsKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		158405DA1A6364D200992EFC /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158405D91A6364D200992EFC /* TweetDetailViewController.swift */; };
 		15C808041A53411400186658 /* ParsedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C808031A53411400186658 /* ParsedTweet.swift */; };
 		15C808061A53416500186658 /* ParsedTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C808051A53416500186658 /* ParsedTweetCell.swift */; };
@@ -32,7 +34,28 @@
 			remoteGlobalIDString = 1528B0DE1A12D00800FBC18A;
 			remoteInfo = PragmaticTweets;
 		};
+		157CD9ED1A829C960096962B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1528B0D71A12D00800FBC18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 157CD9E61A829C960096962B;
+			remoteInfo = PragmaticTweepsKeyboard;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		157CD9F31A829C960096962B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				157CD9EF1A829C960096962B /* PragmaticTweepsKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		150B774A1A3F39300012AAB4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -53,6 +76,9 @@
 		155E02521A7401F80025EE2F /* UserImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserImageDetailViewController.swift; sourceTree = "<group>"; };
 		1564F9131A5D8C8500946B3D /* TwitterAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPIRequest.swift; sourceTree = "<group>"; };
 		1564F9151A5D8DB600946B3D /* TwitterAPIRequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPIRequestDelegate.swift; sourceTree = "<group>"; };
+		157CD9E71A829C960096962B /* PragmaticTweepsKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PragmaticTweepsKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		157CD9EA1A829C960096962B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		157CD9EB1A829C960096962B /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		158405D91A6364D200992EFC /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		15C808031A53411400186658 /* ParsedTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweet.swift; sourceTree = "<group>"; };
 		15C808051A53416500186658 /* ParsedTweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweetCell.swift; sourceTree = "<group>"; };
@@ -74,6 +100,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		157CD9E41A829C960096962B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +115,7 @@
 			children = (
 				1528B0E11A12D00800FBC18A /* PragmaticTweets */,
 				1528B0F71A12D00800FBC18A /* PragmaticTweetsTests */,
+				157CD9E81A829C960096962B /* PragmaticTweepsKeyboard */,
 				1528B0E01A12D00800FBC18A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +125,7 @@
 			children = (
 				1528B0DF1A12D00800FBC18A /* PragmaticTweets.app */,
 				1528B0F41A12D00800FBC18A /* PragmaticTweetsTests.xctest */,
+				157CD9E71A829C960096962B /* PragmaticTweepsKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,6 +209,23 @@
 			name = "Twitter Classes";
 			sourceTree = "<group>";
 		};
+		157CD9E81A829C960096962B /* PragmaticTweepsKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				157CD9EB1A829C960096962B /* KeyboardViewController.swift */,
+				157CD9E91A829C960096962B /* Supporting Files */,
+			);
+			path = PragmaticTweepsKeyboard;
+			sourceTree = "<group>";
+		};
+		157CD9E91A829C960096962B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				157CD9EA1A829C960096962B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		158405D81A63648400992EFC /* Tweet Detail VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,10 +252,12 @@
 				1528B0DB1A12D00800FBC18A /* Sources */,
 				1528B0DC1A12D00800FBC18A /* Frameworks */,
 				1528B0DD1A12D00800FBC18A /* Resources */,
+				157CD9F31A829C960096962B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				157CD9EE1A829C960096962B /* PBXTargetDependency */,
 			);
 			name = PragmaticTweets;
 			productName = PragmaticTweets;
@@ -228,6 +282,23 @@
 			productReference = 1528B0F41A12D00800FBC18A /* PragmaticTweetsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		157CD9E61A829C960096962B /* PragmaticTweepsKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 157CD9F21A829C960096962B /* Build configuration list for PBXNativeTarget "PragmaticTweepsKeyboard" */;
+			buildPhases = (
+				157CD9E31A829C960096962B /* Sources */,
+				157CD9E41A829C960096962B /* Frameworks */,
+				157CD9E51A829C960096962B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PragmaticTweepsKeyboard;
+			productName = PragmaticTweepsKeyboard;
+			productReference = 157CD9E71A829C960096962B /* PragmaticTweepsKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -243,6 +314,9 @@
 					1528B0F31A12D00800FBC18A = {
 						CreatedOnToolsVersion = 6.1;
 						TestTargetID = 1528B0DE1A12D00800FBC18A;
+					};
+					157CD9E61A829C960096962B = {
+						CreatedOnToolsVersion = 6.2;
 					};
 				};
 			};
@@ -262,6 +336,7 @@
 			targets = (
 				1528B0DE1A12D00800FBC18A /* PragmaticTweets */,
 				1528B0F31A12D00800FBC18A /* PragmaticTweetsTests */,
+				157CD9E61A829C960096962B /* PragmaticTweepsKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -279,6 +354,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1528B0F21A12D00800FBC18A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		157CD9E51A829C960096962B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -313,6 +395,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		157CD9E31A829C960096962B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				157CD9EC1A829C960096962B /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -320,6 +410,11 @@
 			isa = PBXTargetDependency;
 			target = 1528B0DE1A12D00800FBC18A /* PragmaticTweets */;
 			targetProxy = 1528B0F51A12D00800FBC18A /* PBXContainerItemProxy */;
+		};
+		157CD9EE1A829C960096962B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 157CD9E61A829C960096962B /* PragmaticTweepsKeyboard */;
+			targetProxy = 157CD9ED1A829C960096962B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -437,6 +532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PragmaticTweets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PragmaticTweets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,6 +584,33 @@
 			};
 			name = Release;
 		};
+		157CD9F01A829C960096962B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PragmaticTweepsKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		157CD9F11A829C960096962B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = PragmaticTweepsKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -516,6 +640,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		157CD9F21A829C960096962B /* Build configuration list for PBXNativeTarget "PragmaticTweepsKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				157CD9F01A829C960096962B /* Debug */,
+				157CD9F11A829C960096962B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
