@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dwH-zQ-DTe">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="33w-VY-LtX">
+            <objects>
+                <viewController id="dwH-zQ-DTe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l4f-10-A8R"/>
+                        <viewControllerLayoutGuide type="bottom" id="uth-dh-PX5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZFl-Kp-lmv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="204"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhD-tj-xcg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Pragmatic Tweeps" id="E3v-bm-cdi">
+                                        <barButtonItem key="rightBarButtonItem" title="Next" id="Ner-c7-ZA3"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5e2-YC-of3">
+                                <rect key="frame" x="0.0" y="44" width="600" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="yU8-iP-77H"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hhD-tj-xcg" firstAttribute="leading" secondItem="ZFl-Kp-lmv" secondAttribute="leading" id="0Gm-Ld-usc"/>
+                            <constraint firstItem="hhD-tj-xcg" firstAttribute="top" secondItem="ZFl-Kp-lmv" secondAttribute="top" id="A0O-4q-a8v"/>
+                            <constraint firstItem="5e2-YC-of3" firstAttribute="top" secondItem="hhD-tj-xcg" secondAttribute="bottom" id="PS5-fS-gKi"/>
+                            <constraint firstItem="5e2-YC-of3" firstAttribute="leading" secondItem="ZFl-Kp-lmv" secondAttribute="leading" id="gMo-pW-LVe"/>
+                            <constraint firstAttribute="trailing" secondItem="hhD-tj-xcg" secondAttribute="trailing" id="hi9-ac-ikv"/>
+                            <constraint firstAttribute="trailing" secondItem="5e2-YC-of3" secondAttribute="trailing" id="rog-cu-5Z2"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="204"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Rb-h5-gEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="712" y="352"/>
+        </scene>
+    </scenes>
+</document>

@@ -20,6 +20,7 @@
 		1564F9161A5D8DB600946B3D /* TwitterAPIRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1564F9151A5D8DB600946B3D /* TwitterAPIRequestDelegate.swift */; };
 		157CD9EC1A829C960096962B /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157CD9EB1A829C960096962B /* KeyboardViewController.swift */; };
 		157CD9EF1A829C960096962B /* PragmaticTweepsKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 157CD9E71A829C960096962B /* PragmaticTweepsKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		157CD9F51A829EF50096962B /* PragmaticTweepsKeyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157CD9F41A829EF50096962B /* PragmaticTweepsKeyboard.storyboard */; };
 		158405DA1A6364D200992EFC /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158405D91A6364D200992EFC /* TweetDetailViewController.swift */; };
 		15C808041A53411400186658 /* ParsedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C808031A53411400186658 /* ParsedTweet.swift */; };
 		15C808061A53416500186658 /* ParsedTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C808051A53416500186658 /* ParsedTweetCell.swift */; };
@@ -79,6 +80,7 @@
 		157CD9E71A829C960096962B /* PragmaticTweepsKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PragmaticTweepsKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		157CD9EA1A829C960096962B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		157CD9EB1A829C960096962B /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		157CD9F41A829EF50096962B /* PragmaticTweepsKeyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PragmaticTweepsKeyboard.storyboard; sourceTree = "<group>"; };
 		158405D91A6364D200992EFC /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		15C808031A53411400186658 /* ParsedTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweet.swift; sourceTree = "<group>"; };
 		15C808051A53416500186658 /* ParsedTweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweetCell.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		157CD9E81A829C960096962B /* PragmaticTweepsKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				157CD9F41A829EF50096962B /* PragmaticTweepsKeyboard.storyboard */,
 				157CD9EB1A829C960096962B /* KeyboardViewController.swift */,
 				157CD9E91A829C960096962B /* Supporting Files */,
 			);
@@ -364,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				157CD9F51A829EF50096962B /* PragmaticTweepsKeyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
