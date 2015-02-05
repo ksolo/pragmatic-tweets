@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Keyboard View Controller-->
         <scene sceneID="33w-VY-LtX">
             <objects>
-                <viewController id="dwH-zQ-DTe" sceneMemberID="viewController">
+                <viewController id="dwH-zQ-DTe" customClass="KeyboardViewController" customModule="PragmaticTweepsKeyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l4f-10-A8R"/>
                         <viewControllerLayoutGuide type="bottom" id="uth-dh-PX5"/>
@@ -24,7 +24,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Pragmatic Tweeps" id="E3v-bm-cdi">
-                                        <barButtonItem key="rightBarButtonItem" title="Next" id="Ner-c7-ZA3"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Next" id="Ner-c7-ZA3">
+                                            <connections>
+                                                <action selector="nextKeybaordButtonTapped:" destination="dwH-zQ-DTe" id="sNP-VZ-PCJ"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -34,6 +38,18 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="yU8-iP-77H"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefaultCell" id="2k6-CC-K8Q">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2k6-CC-K8Q" id="2Cr-pN-AJe">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dwH-zQ-DTe" id="6d0-n0-5fp"/>
+                                    <outlet property="delegate" destination="dwH-zQ-DTe" id="apS-jP-pix"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,6 +64,10 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="204"/>
+                    <connections>
+                        <outlet property="nextKeyboardButton" destination="Ner-c7-ZA3" id="hVb-TG-puh"/>
+                        <outlet property="tableView" destination="5e2-YC-of3" id="PK2-3a-mPD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Rb-h5-gEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
